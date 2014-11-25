@@ -1,0 +1,29 @@
+doctype html
+html(lang='en', ng-app='myApp')
+  head
+      meta(charset='UTF-8')
+      title= title
+      //
+         Codemirror 
+      script(src='js/lib/code/codemirror.js')
+      script(src='js/lib/code/modes/javascript/javascript.js')
+      //
+         Stylesheets 
+      link(rel='stylesheet', href='js/lib/code/codemirror.css')
+      link(rel='stylesheet', href='css/style.css')
+    body
+      .container(ng-view='ng-view')
+      #editor.container
+      #console
+      #fileTree
+        pre 
+         block content    
+      input#filePath(type='text', name='filePath')
+      select#fileType(name='fileType')
+        option(value='#{fileType}')= fileType
+      button#save(type='button') Save
+      button#load(type='button') Load
+      //
+         Scripts 
+      script(src='js/lib/jquery.min.js')
+      script(src='js/editor.js')
